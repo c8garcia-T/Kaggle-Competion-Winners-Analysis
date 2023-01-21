@@ -68,5 +68,50 @@ plot(fig, filename="temp4.html")
 
 """
 Observations:
-    f
+    ECDF reward plot:
+        Shape:
+            vertical slope nearly form 0-0.8 y-axis
+            skewed left
+            
+        Histogram margin:
+            unimodal
+            confirms that most records are in bin ~0-50k
+            can easily see presence of outliers
+    Teams Participated Histogram and boxplot margin plot:
+        Shape:
+            Skewed left
+            unimodal
+    Deadline Estimate histogram:
+        Bimodal (2013, 2022)
+    Category Bar Plot:
+        Notable bars: Featured > Research > Featured Code Compeition      
 """
+#%% Correlation Analysis
+fig = px.scatter_matrix(
+    competitions_meta[["reward", "teams_participated", "deadline_estimate"]]
+)
+plot(fig)
+"""
+Observations:
+    Looking at deadline_estimate x_axis and seeing it against teams_participated and ...
+    ... reward variable is the most insightful.
+    deadline_estimate vs reward:
+    The trend that competitions typically hold reward values <100k is evident across...
+    ... time. The plot makes it easy to see the competition with reward outliers and...
+    ... when they took place. 
+    deadline_estimate vs teams_participated
+    2014->2015 after 2015 it appears that the variation in teams participated increased
+    teams_participated vs reward:
+        no linear correlation present at a glance
+"""
+#%%
+# For fun visualization
+fig = px.scatter(
+    competitions_meta,
+    x="reward",
+    y="teams_participated",
+    color="category",
+    hover_name="category",
+    log_x=True,
+)
+plot(fig)
