@@ -31,6 +31,8 @@ Cleaning objectives:
     extract total team count from metadata column
     extract date of competition completion from metadata column
 """
+print(competition_data.isna().sum())
+assert competition_data.isna().sum().sum() == 0
 # Sample record
 display(competition_data.iloc[0, :])
 # Cleaning Process
@@ -187,4 +189,4 @@ if os.path.exists(destination_path):
     print("File exists")
 else:
     print("File created")
-    competition_data_merged.to_csv(destination_path)
+    competition_data_merged.to_csv(destination_path, index=False)
