@@ -1,1 +1,1 @@
-Q: Are you working with experimental or observational Data?A: observationalQ: Data validation performed? (e.g. does data meet criteria)A: Q: Did you check out the basic summary statistics?A: 
+Q: Are you working with experimental or observational Data?A: observationalQ: Data validation performed? (e.g. does data meet criteria)A: YesQ: Did you check out the basic summary statistics?A: Yes
