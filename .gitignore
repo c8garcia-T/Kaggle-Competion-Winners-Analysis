@@ -4,6 +4,5 @@
 *.html
 *.jpg
 *.jpeg
-.vscode
-.ipynb_checkpoints
-.DS_Store
+.*
+!/.gitignore
